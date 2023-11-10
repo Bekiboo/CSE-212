@@ -8,8 +8,10 @@
  * GitHub repository, unshared Google Drive folder) is acceptable.
  *
  */
-public static class TakingTurns {
-    public static void Test() {
+public static class TakingTurns
+{
+    public static void Test()
+    {
         // TODO Problem 1 - Run test cases and fix the code to match requirements
         // Test Cases
 
@@ -22,10 +24,13 @@ public static class TakingTurns {
         players.AddPerson("Bob", 2);
         players.AddPerson("Tim", 5);
         players.AddPerson("Sue", 3);
-        // Console.WriteLine(players);    // This can be un-commented out for debug help
         while (players.Length > 0)
+        {
             players.GetNextPerson();
-        // Defect(s) Found: 
+        }
+
+        // Defect(s) Found: the Dequeue method in the PersonQueue class is removing the last person in 
+        // the queue instead of the first person in the queue.
 
         Console.WriteLine("---------");
 
@@ -38,7 +43,8 @@ public static class TakingTurns {
         players.AddPerson("Bob", 2);
         players.AddPerson("Tim", 5);
         players.AddPerson("Sue", 3);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++)
+        {
             players.GetNextPerson();
             // Console.WriteLine(players);
         }
@@ -48,7 +54,7 @@ public static class TakingTurns {
         while (players.Length > 0)
             players.GetNextPerson();
 
-        // Defect(s) Found: 
+        // Defect(s) Found: none
 
         Console.WriteLine("---------");
 
@@ -62,11 +68,13 @@ public static class TakingTurns {
         players.AddPerson("Tim", 0);
         players.AddPerson("Sue", 3);
         // Console.WriteLine(players);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
+        {
             players.GetNextPerson();
             // Console.WriteLine(players);
         }
-        // Defect(s) Found: 
+        // Defect(s) Found: the GetNextPerson method in the TakingTurnsQueue class is removing persons 
+        // from the queue even if they have an infinite number of turns.
 
         Console.WriteLine("---------");
 
@@ -76,6 +84,6 @@ public static class TakingTurns {
         Console.WriteLine("Test 4");
         players = new TakingTurnsQueue();
         players.GetNextPerson();
-        // Defect(s) Found:
+        // Defect(s) Found: none
     }
 }
